@@ -19,3 +19,21 @@ justify-content: space-between;
     justify-content: center;
     align-items: flex-start;
       gap: 40px;}
+.rectangle{
+    background-color: white;
+    border-radius: 32px;
+    margin-right: 40px;
+}
+.rectangle_img{
+    width: 336px;
+    height: 304px;
+    margin-top: 243px;
+}
+footer{
+    justify-content: center;
+    background-color: blue;
+    border-radius: 40px;
+    padding: 1px;
+    font-size: 24px;
+    color: blanchedalmond;
+}
