@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./styles/styleC.css">
    <link rel="shortcut icon" href="https://w7.pngwing.com/pngs/731/9/png-transparent-encryption-computer-icons-favicon-encryption-ico-miscellaneous-purple-violet.png" type="image/x-icon">
-    <title>Encriptador</title>
+   <title>Encriptador</title>
 </head>
 <body>
     <header class="encabezado_y_pie">@Desarrollado por Besigniano Agustin para ALURA LATAM 2024
@@ -16,28 +16,35 @@
 
        <div class="sector_medio">
                  <h1>Encriptador_V1</h1>
-                    <textarea placeholder="ingrese el mensaje a encriptar " id="var_texto"></textarea>
+                    <textarea placeholder="ingrese el mensaje a encriptar " id="var_texto" required></textarea>
                 <h6 id="sintaxis">
         <img  src="./multimedias/signo-de-exclamacion-en-un-circulo.png" alt="pequeño signo de exclamacion">
                 Solo minusculas y sin acentos</h6>
                     <div class="sector_medio_button">
                       
-                                    <button>Encriptar</button>
-                                    <button>Desencriptar</button>
+                                    <button onclick="verificar_tarea('Encriptar')" >Encriptar</button>
+                                    <button onclick="verificar_tarea('Desencriptar')">Desencriptar</button>
                                 <!--    <button id="reset">volver</button>-->
                                 </div>
         </div>
 
         <div class="rectangle">
-                
-            <div class="rectangle_img">
+             <div class="rectangle_img">
+             
                 <img src="./multimedias/Muñeco.png" alt="persona animada senta sobre sus piernas observando un joya"> 
             </div>
 
             <div class="rectangle_mensaje">
-                <h1>Ningún mensaje fue encontrado</h1>
+                <h1 >Ningún mensaje fue encontrado</h1>
                 <h6>Ingresa el texto que desees encriptar o desencriptar.</p>
-            </div>  
+                <div class="cifrado">
+                    <h4 id="mensaje"></h4>
+                    <div class="sector_medio_button">
+                    <button class="copiado"><img src="./multimedias/flecha-izquierda.png" alt="flecha atras"></button>
+                    <button class="copiado" onclick="copiar_texto()">copiar</button></div>
+                </div>
+                
+                </div> 
         </div>
     </div>
 
@@ -47,7 +54,7 @@
       </footer>
 
 
-
+<script src="funciones.js"></script>
 
 </body>
 </html>
