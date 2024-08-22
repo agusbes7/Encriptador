@@ -16,6 +16,9 @@ function encriptar_texto(encriptar){
         console.log('clave: '+texto+ ' desencriptacion: ' + text_copy);}
       }
     return          text_copy;}
+        /*Aunque se probo un conjunto de palabras no se observaron fallos          se ordenaron las encriptaciones con el fin de que una no pise a la otra como pasaba
+         con los reemplazos de a por ai y luego la i por imes          y el proceso inverso se realizo en el orden inverso al de encriptar
+         Aun asi no se descarta que existan palabras sensibles          que no se comporten adecuadamente al desencriptarla por la palabra original*/
 
 function verificar_tarea(operacion){
           var tex=document.getElementById('var_texto').value;
@@ -25,31 +28,28 @@ function verificar_tarea(operacion){
           else{
           aux=encriptar_texto(operacion);
           document.getElementById('mensaje').innerText=aux;
-          ocultar_elemC('rectangle_mensaje');
-          ocultar_elemC('rectangle_img');
-          mostrar_elemC('cifrado');
+         visibilidad_elemC('rectangle_mensaje','none');
+         visibilidad_elemC('rectangle_img','none');
+         visibilidad_elemC('cifrado','flex');
           }}
 
 
-        /*Aunque se probo un conjunto de palabras no se observaron fallos 
-        se ordenaron las encriptaciones con el fin de que una no pise a la otra como pasaba
-         con los reemplazos de a por ai y luego la i por imes 
-         y el proceso inverso se realizo en el orden inverso al de encriptar
-         Aun asi no se descarta que existan palabras sensibles 
-         que no se comporten adecuadamente al desencriptarla por la palabra original*/
-         function copiar_texto(){
-          var texto= document.getElementById('var_texto').value;
-         }
-        function mostrar_elemC(cl){
+    
+          function copiar_texto() {
+            const texto = document.getElementById('mensaje').innerText;
+            navigator.clipboard.writeText(texto).then(() => {
+                const mensajeFlotante = document.getElementById('mensajeFlotante');
+                mensajeFlotante.style.visibility = 'visible';
+                setTimeout(() => {
+                    mensajeFlotante.style.visibility = 'hidden';
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar el texto: ', err);
+            });
+        }
+        function visibilidad_elemC(cl,vis){
           let elements = document.getElementsByClassName(cl);
           for (let i = 0; i < elements.length; i++) {
-              elements[i].style.display = "inline-block";
+              elements[i].style.display = vis;
           }
       }
-         function ocultar_elemC(cl){
-          let elements = document.getElementsByClassName(cl);
-          for (let i = 0; i < elements.length; i++) {
-              elements[i].style.display = "none";
-          }
-      }
-     
