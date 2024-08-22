@@ -23,9 +23,8 @@ function encriptar_texto(encriptar){
 function verificar_tarea(operacion){
           var tex=document.getElementById('var_texto').value;
           var aux='';
-    if(tex.trim()==""){   
-          alert('El contenido esta vacio');        }
-          else{
+    if(tex.trim()==""){ mensaje_flotante('mensaje_vacio');
+      }else{
           aux=encriptar_texto(operacion);
           document.getElementById('mensaje').innerText=aux;
          visibilidad_elemC('rectangle_mensaje','none');
@@ -33,21 +32,33 @@ function verificar_tarea(operacion){
          visibilidad_elemC('cifrado','flex');
           }}
 
+function volver(){
+  document.getElementById('mensaje').innerText=" ";
+  visibilidad_elemC('rectangle_mensaje','block');
+  visibilidad_elemC('rectangle_img','block');
+  visibilidad_elemC('cifrado','none');
+  vaciarTextarea();
+}
+function mensaje_flotante(id) {
+      const mensajeFlotante = document.getElementById(id);
+    mensajeFlotante.style.visibility = 'visible';
+    setTimeout(() => {
+        mensajeFlotante.style.visibility = 'hidden';
+    }, 2000);}   
 
-    
           function copiar_texto() {
             const texto = document.getElementById('mensaje').innerText;
             navigator.clipboard.writeText(texto).then(() => {
-                const mensajeFlotante = document.getElementById('mensajeFlotante');
-                mensajeFlotante.style.visibility = 'visible';
-                setTimeout(() => {
-                    mensajeFlotante.style.visibility = 'hidden';
-                }, 2000);
-            }).catch(err => {
+              mensaje_flotante('mensajeFlotante')}).catch(err => {
                 console.error('Error al copiar el texto: ', err);
             });
-        }
-        function visibilidad_elemC(cl,vis){
+            vaciarTextarea();
+            }
+            function vaciarTextarea(){
+              const textarea = document.getElementById('var_texto');
+              textarea.value = '';
+              textarea.placeholder = 'ingrese el mensaje a encriptar';}
+            function visibilidad_elemC(cl,vis){
           let elements = document.getElementsByClassName(cl);
           for (let i = 0; i < elements.length; i++) {
               elements[i].style.display = vis;
