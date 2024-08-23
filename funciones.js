@@ -41,9 +41,9 @@ function volver(){
 }
 function mensaje_flotante(id) {
       const mensajeFlotante = document.getElementById(id);
-    mensajeFlotante.style.visibility = 'visible';
+    mensajeFlotante.style.display = 'flex';
     setTimeout(() => {
-        mensajeFlotante.style.visibility = 'hidden';
+      mensajeFlotante.style.display = 'none';
     }, 2000);}   
 
           function copiar_texto() {
