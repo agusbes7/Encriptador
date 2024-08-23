@@ -3,30 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="./styles/styleC.css">
+   <link rel="stylesheet" href="./styles/styleC1.css">
    <link rel="shortcut icon" href="https://w7.pngwing.com/pngs/731/9/png-transparent-encryption-computer-icons-favicon-encryption-ico-miscellaneous-purple-violet.png" type="image/x-icon">
-   <title>Encriptador</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&display=swap" rel="stylesheet">
+    <title>Encriptador</title>
 </head>
 <body>
-    <header class="encabezado_y_pie">@Desarrollado por Besigniano Agustin para ALURA LATAM 2024
+  
+  <header class="encabezado_y_pie">@Desarrollado por Besigniano Agustin para ALURA LATAM 2024
           <a href="https://www.aluracursos.com/"><img src="./multimedias/header_log.png" alt="logo alura latam"></a> 
           <a href="https://www.instagram.com/aluralatam/"><img src="./multimedias/instagram.png" alt="icono de instagram"></a>
           </header>
-    <div class="container">
+  
+<div class="container">
 
        <div class="sector_medio">
-                 <h1>Encriptador_V1</h1>
+                
+                 <div id="cuadro_de_texto">
+                  <h1>Encriptador_V1</h1>
                     <textarea placeholder="ingrese el mensaje a encriptar " id="var_texto" required></textarea>
-                <h6 id="sintaxis">
-        <img  src="./multimedias/signo-de-exclamacion-en-un-circulo.png" alt="pequeño signo de exclamacion">
+               <div id="recordatorio">
+                    <h6 id="sintaxis">
+                <img  src="./multimedias/signo-de-exclamacion-en-un-circulo.png" alt="pequeño signo de exclamacion">
                 Solo minusculas y sin acentos</h6>
-                    <div class="sector_medio_button">
+              </div>
+            </div>
+              <div class="sector_medio_button">
                       
                                     <button onclick="verificar_tarea('Encriptar')" >Encriptar</button>
                                     <button onclick="verificar_tarea('Desencriptar')">Desencriptar</button>
                                 <!--    <button id="reset">volver</button>-->
                                 </div>
-        </div>
+          </div>
 
         <div class="rectangle">
              <div class="rectangle_img">
@@ -37,18 +47,25 @@
             <div class="rectangle_mensaje">
                 <h1 >Ningún mensaje fue encontrado</h1>
                 <h6>Ingresa el texto que desees encriptar o desencriptar.</p>
-                <div class="cifrado">
+                        
+                </div> 
+            <div class="cifrado">
                     <h4 id="mensaje"></h4>
                     <div class="sector_medio_button">
-                    <button class="copiado"><img src="./multimedias/flecha-izquierda.png" alt="flecha atras"></button>
-                    <button class="copiado" onclick="copiar_texto()">copiar</button></div>
+                    <button class="copiado" onclick="volver()"><img src="./multimedias/flecha-izquierda.png" alt="flecha atras"></button>
+                    <button class="copiado" onclick="copiar_texto()">copiar</button>
+                           </div>
                 </div>
-                
-                </div> 
-        </div>
+          </div>
     </div>
-
-      <footer class="encabezado_y_pie" >Informacion de contacto
+   
+   <div>
+    <div id="mensajeFlotante">Texto copiado al portapapeles</div>
+    <div id="mensaje_vacio">El recuadro se encuentra vacio</div>
+  </div>
+  
+  <footer class="encabezado_y_pie" >
+      Informacion de contacto
         <a href="http://"><img src="./multimedias/linkedin.png" alt="icono de linkedin"></a>
         <a href="mailto:aguscabj10.ab@gmail.com"><img src="./multimedias/gmail.png" alt="icono de correo electronico"></a>
       </footer>
