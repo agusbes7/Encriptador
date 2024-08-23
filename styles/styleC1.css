@@ -1,0 +1,228 @@
+* {   
+  box-sizing: border-box; 
+max-width: 100%;}
+html{
+ font-size: 14px;}
+
+body { 
+margin: 0;
+background-image: url("/multimedias/Binario_c.png");
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 100%;
+overflow-x: hidden;}
+/*------------------------------------------------*/
+.encabezado_y_pie{
+flex: 0 0 auto;
+display: block;
+width: 100%;
+padding: 0%;
+background: linear-gradient(45deg, #32B92D 0%, #000000 100%);
+font-size: 1.125rem;
+font-style: italic;
+text-align: center;
+word-spacing: 0.3rem;
+font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+color: antiquewhite;}
+header{
+    height: 5%;}
+footer{
+    position: fixed;
+    bottom: 0;
+height: 4%;}
+.encabezado_y_pie img{
+    width: 1rem;
+    height: 1rem;}
+/*------------------------------------------------*/
+.container *{
+    display: flex;
+    overflow: hidden;
+}
+.container {
+    
+padding: 1.2rem;
+display: flex;
+flex-direction: row;
+gap: 5%;
+position: relative;
+justify-content: space-between;
+text-align: justify;
+width: 100%;
+height: 80%;
+
+margin-top: 2%;
+margin-bottom: 2%;}
+/*------------------------------------------------*/
+.rectangle, .sector_medio{
+  /*  flex: 0 1 auto;*/
+  position: relative;
+
+min-height: 80%;
+   top: 10%;
+   flex-direction: column; 
+   justify-content: center;
+   align-items: center;
+   text-align: center;   
+border-radius: 2rem; }
+.rectangle{
+    width: 30%;
+ 
+
+    background-color: white;
+   
+    margin: 1rem;
+}
+.rectangle_mensaje{
+    width: 100%;
+    height: 45%;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    justify-content: center;
+}
+.rectangle_mensaje h6{
+    justify-content: center;
+    font-size: 1rem;}
+    .rectangle_img{
+width: 100%;
+height: 50%;
+    }
+.sector_medio{
+background-color:#B3FFB3;
+width: 40%;
+left:10%;
+border-radius: 2rem;
+padding: 1rem;
+margin: 1rem;
+gap: 1rem;
+}
+
+/*-----*/
+textarea{
+width: 90%;
+height: 30%;
+resize: none;
+border-radius: 12px;
+text-align: center;
+align-items: center;
+justify-content: center;
+}
+
+/*---*/
+h1{
+    text-align: center;
+    font-size: 1.8rem;
+    word-spacing: 0.4rem;
+font-family: "Arial Black", Gadget, sans-serif;
+color: #1D9627;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: uppercase;
+justify-content: baseline;
+
+}
+
+
+/*------------------------------------------------*/
+.sector_medio_button{
+    width: 100%;
+    min-height: 10%;
+   justify-content: center;
+    flex-direction:row;
+    gap: 1rem;
+
+}
+button{
+  width: 40%;
+  height: 100%;
+    color: rgb(234, 234, 234); 
+    font-size: 1rem; 
+    line-height: 3rem; 
+    border-radius: 1rem; 
+    text-align: center;
+    justify-content: center;
+    font-family: "Arial Black", "Gadget", sans-serif; 
+    font-weight: normal; text-decoration: none; 
+    font-style: normal; font-variant: normal; 
+    text-transform: uppercase;
+     background-image: linear-gradient(135deg, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 44%, rgb(20, 78, 117) 100%); 
+     box-shadow: rgba(0, 0, 0, 0) -100px -45px 15px 5px; border: 2px solid rgb(28, 110, 164); 
+     display: block;}
+button:hover {
+background: #1C6EA4; }
+button:active {
+background: #1a6ba1; }
+.reset{
+    display: none;
+    overflow: scroll;
+}
+.sintaxis img{
+    width: 1rem;
+    height: 1rem;}
+#recordatorio{
+    flex-direction: row;
+    gap: 0.2rem;
+   
+}
+#cuadro_de_texto{
+    flex-direction: column;
+    gap: 0.2rem;
+    width: 90%;
+    height: 50%;
+   align-items: center;
+    justify-content: center;
+
+}
+
+.cifrado{
+    display: none;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 1.2rem;}
+/*------------------------------------------------------------*/
+#mensaje{
+text-align: center;
+font-family: "Edu VIC WA NT Beginner", "cursive";
+ font-optical-sizing: auto;
+font-size:1rem;
+font-style: normal;
+color:#000000;
+font-weight: normal;
+text-decoration:content;
+background-color: rgb(255,255,179);
+padding: 20%;}
+#mensajeFlotante, #mensaje_vacio {
+  position:fixed;
+  display: none;
+  left: 45%;
+  top:50%;
+  text-align: center;
+  transform: translateX(-50%,-50%);
+  min-width: 16rem;
+  background-color: #333;
+  color: #fff;
+border-radius: 1rem;
+     padding: 0.8rem;
+font-size: 1,2rem;}
+
+@media (max-width: 930px) {
+    html{
+        font-size: 10px;}  }
+        @media (max-width: 670px) {
+            html{
+                font-size: 8px;}  
+
+}
+@media (max-width: 600px) {
+    .container{
+        flex-direction: column;
+        }
+        .rectangle, .sector_medio{
+            flex-direction: row;
+            width: 100%;
+  height: 40%;
+left: 0%;} }
