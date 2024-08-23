@@ -11,8 +11,7 @@
     <title>Encriptador</title>
 </head>
 <body>
-  
-  <header class="encabezado_y_pie">@Desarrollado por Besigniano Agustin para ALURA LATAM 2024
+   <header class="encabezado_y_pie">@Desarrollado por Besigniano Agustin para ALURA LATAM 2024
           <a href="https://www.aluracursos.com/"><img src="./multimedias/header_log.png" alt="logo alura latam"></a> 
           <a href="https://www.instagram.com/aluralatam/"><img src="./multimedias/instagram.png" alt="icono de instagram"></a>
           </header>
@@ -24,24 +23,23 @@
                  <div id="cuadro_de_texto">
                   <h1>Encriptador_V1</h1>
                     <textarea placeholder="ingrese el mensaje a encriptar " id="var_texto" required></textarea>
-               <div id="recordatorio">
                     <h6 id="sintaxis">
                 <img  src="./multimedias/signo-de-exclamacion-en-un-circulo.png" alt="pequeño signo de exclamacion">
                 Solo minusculas y sin acentos</h6>
-              </div>
+              
             </div>
               <div class="sector_medio_button">
                       
                                     <button onclick="verificar_tarea('Encriptar')" >Encriptar</button>
                                     <button onclick="verificar_tarea('Desencriptar')">Desencriptar</button>
-                                <!--    <button id="reset">volver</button>-->
-                                </div>
+                                                                </div> 
+                             
           </div>
 
         <div class="rectangle">
-             <div class="rectangle_img">
+            <div class="rectangle_img">
              
-                <img src="./multimedias/Muñeco.png" alt="persona animada senta sobre sus piernas observando un joya"> 
+                <img src="./multimedias/Muñeco.png" id="imagen_rect" alt="persona animada senta sobre sus piernas observando un joya"> 
             </div>
 
             <div class="rectangle_mensaje">
@@ -56,9 +54,9 @@
                     <button class="copiado" onclick="copiar_texto()">copiar</button>
                            </div>
                 </div>
-          </div>
+          </div> 
     </div>
-   
+  
    <div>
     <div id="mensajeFlotante">Texto copiado al portapapeles</div>
     <div id="mensaje_vacio">El recuadro se encuentra vacio</div>
@@ -69,7 +67,7 @@
         <a href="http://"><img src="./multimedias/linkedin.png" alt="icono de linkedin"></a>
         <a href="mailto:aguscabj10.ab@gmail.com"><img src="./multimedias/gmail.png" alt="icono de correo electronico"></a>
       </footer>
-
+  
 
 <script src="funciones.js"></script>
 
