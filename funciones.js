@@ -34,17 +34,19 @@ function verificar_tarea(operacion){
 
 function volver(){
   document.getElementById('mensaje').innerText=" ";
-  visibilidad_elemC('rectangle_mensaje','block');
-  visibilidad_elemC('rectangle_img','block');
+  visibilidad_elemC('rectangle_mensaje','flex');
+  visibilidad_elemC('rectangle_img','flex');
   visibilidad_elemC('cifrado','none');
   vaciarTextarea();
 }
+
 function mensaje_flotante(id) {
       const mensajeFlotante = document.getElementById(id);
     mensajeFlotante.style.display = 'flex';
     setTimeout(() => {
       mensajeFlotante.style.display = 'none';
-    }, 2000);}   
+    }, 500);}   
+
 
           function copiar_texto() {
             const texto = document.getElementById('mensaje').innerText;
@@ -64,3 +66,25 @@ function mensaje_flotante(id) {
               elements[i].style.display = vis;
           }
       }
+/*-----------------------------------*/
+function applyResponsiveStyles() {
+  const zoomLevel = window.devicePixelRatio;
+  const mediaQuery = window.matchMedia('(max-width: 600px)');
+
+  if ((zoomLevel > 1) && (zoomLevel<=1.75)) {
+    document.documentElement.style.fontSize = '12px';}
+    else{
+      if (zoomLevel > 1.75) {
+        document.documentElement.style.fontSize = '10px';}
+        else{
+          if (zoomLevel >= 2) {
+            document.documentElement.style.fontSize = '8px';}
+          
+        }
+    }
+   }
+  detectZoom();
+  function detectZoom() {
+    const zoomLevel = Math.round(window.devicePixelRatio * 100);
+    console.log(`Zoom actual: ${zoomLevel}%`);}
+    window.addEventListener('resize', applyResponsiveStyles);
