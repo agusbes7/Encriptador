@@ -16,7 +16,7 @@ overflow-x: hidden;}
 display: flex;
 gap: 1.2rem;
 width: 100%;
-padding: 0%;
+padding: 1%;
 height: 5%;
 
 background: linear-gradient(45deg, #32B92D 0%, #000000 100%);
@@ -109,20 +109,19 @@ font-variant: normal;
 text-transform: uppercase;
 justify-content: baseline;
 margin: 0;}
-
-
 /*------------------------------------------------*/
-.sector_medio_button{
+.sector_medio_button, .rectangle_button{
     display: flex;
-    width: 100%;
+    width: 95%;
     height:20%;
     min-height: 10%;
    justify-content: center;
    align-items: center;
     flex-direction:row;
     gap: 1rem;}
-button{
-  width: 50%;
+    /*--------------------------*/
+.medio,.copiado{
+  width: 45%;
   height: 60%;
     color: rgb(234, 234, 234); 
     font-size: 1rem; 
@@ -134,17 +133,20 @@ button{
     font-weight: normal; text-decoration: none; 
     font-style: normal; font-variant: normal; 
     text-transform: uppercase;
-     background-image: linear-gradient(135deg, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 44%, rgb(20, 78, 117) 100%); 
-     box-shadow: rgba(0, 0, 0, 0) -100px -45px 15px 5px; border: 2px solid rgb(28, 110, 164); 
+    background: #3BCE36;
+    background: -moz-linear-gradient(left, #3BCE36 0%, #0B250A 100%, #446A33 100%);
+    background: -webkit-linear-gradient(left, #3BCE36 0%, #0B250A 100%, #446A33 100%);
+    background: linear-gradient(to right, #3BCE36 0%, #0B250A 100%, #446A33 100%);
      display: block;}
 button:hover {
-background: #1C6EA4; }
-button:active {
-background: #1a6ba1; }
+    background: #3BCE36; }
+    .myButton:active {
+    background: #446A33; }
 .reset{
     display: none;
     overflow: scroll;
 }
+/*--------------------------*/
 #sintaxis{
     font-size: 1rem;
 margin: 0;}
@@ -157,9 +159,8 @@ margin: 0;}
    
      align-items: center;
     justify-content: center;
-height: 80%;
-
-}
+height: 80%;}
+/*--------------------------*/
 
 .cifrado{
     display: none;
@@ -167,16 +168,14 @@ height: 80%;
     text-align: center;
     flex-direction: column;
     gap: 1.2rem;
-    width: 90%;
+    width: 100%;
     height: 100%;
-    justify-content: center;
-    align-items: center;}
+    justify-content: center;}
     .cifrado .sector_medio_button{
         height: 20%;}
         .cifrado .sector_medio_button button{
             width: 40%;
-            height: 45%;
-        }        
+            height: 45%; }        
 /*------------------------------------------------------------*/
 #mensaje{
     height: 70%;
@@ -191,14 +190,12 @@ color:#000000;
 font-weight: normal;
 text-decoration:content;
 background-color: rgb(255,255,179);
-padding: 20%;}
+}
 #mensajeFlotante, #mensaje_vacio {
-  position:fixed;
   display: none;
-  left: 45%;
-  top:50%;
   text-align: center;
-  transform: translateX(-50%,-50%);
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease; 
   min-width: 16rem;
   background-color: #333;
   color: #fff;
@@ -206,8 +203,9 @@ border-radius: 1rem;
      padding: 0.8rem;
 font-size: 1,2rem;}
 
+/*--------------------------*/
 @media(max-width: 1000px){
-   button{
+    .medio,.copiado{
     width: 45%;
     height: 55%;
 font-size: 0.8rem;}}
@@ -218,9 +216,9 @@ font-size: 0.8rem;}}
     h1{
         font-size: 1.5rem; }
   
-    .sector_medio_button{
+    .sector_medio_button, .rectangle_button{
         align-items:baseline;}
-    button{
+    .medio, .copiado{
         width: 45%;
         height: 45%;
         font-size: 0.6rem;}
@@ -236,10 +234,12 @@ font-size: 0.8rem;}}
     .container{
         flex-direction: column;
     gap: 3%; }
+    /*--------------------------*/
     .rectangle, .sector_medio{
             height: 40%;
             width: 90%;
             flex-direction: row;}
+            /*--------------------------*/
      .rectangle_img{
             height: 100%;
             width: 50%;}
@@ -247,10 +247,10 @@ font-size: 0.8rem;}}
             height: 100%;
             width: 45%;
         justify-content: center;}
-     #cuadro_de_texto{
-            width: 70%;
-            height: 90%;}
+        /*--------------------------*/
+    
     textarea{font-size: 1.3rem;}
+    /*--------------------------*/
      .sector_medio_button{
             display: flex;
             flex-direction: column;
@@ -258,53 +258,127 @@ font-size: 0.8rem;}}
             width: 30%;
             justify-content: center;
             align-items: center; }
-    button{
-                width: 78%;
-                height: 36%;
+            .medio{
+                width: 90%;
+                height: 29%;
                 font-size: 1rem;}
+            .rectangle_button{
+                display: flex;
+                flex-direction: row;
+                gap: 2%;
+                justify-content: center;
+                height: 30%;
+                width: 100%;
+                align-items: center;}
+                .copiado{
+                    width: 45%;
+                    height: 50%;
+                    font-size: 1rem;
+                }
+                #cuadro_de_texto{
+                    width: 70%;
+                    height: 100%;
+                }
+  
+    /*--------------------------*/      
     h1{font-size: 1.8rem;}
 .cifrado{
-    flex-direction: row;
+    flex-direction: column;
 height: 100%;
 width: 100%;
-justify-content: baseline;
-align-items: baseline;}
+justify-content: initial;
+align-items: initial;
+gap: 0;}
 #mensaje{
-    height: 100%;
-    width: 60%;
-}}
+    height: 70%;
+    width: 100%;
+    font-size: 1.2rem;
+margin: 0;}
+#mensajeFlotante{
+    position: absolute;
+    left: 35%;
+    top: 73%;
+}
+   }
 /*-------------------------------------------*/
     @media (max-width: 500px) {
         h1{font-size: 1.4rem;}
             .rectangle_mensaje h6{
                 font-size: 1rem;}
-        
-        button{         width: 90%;
-                    height: 23%;
-                    font-size: 1rem;}
+    
                 #cuadro_de_texto{
                     gap:5%}}
+
                     /*-------------------------------------------*/
-@media (max-width: 400px) {
-html{font-size: 8px;}
-.encabezado_y_pie{
-font-size: 1rem;
-padding: 1%;}
-button{width: 100;}}
-/*-------------------------------------------*/
+    @media (max-width: 450px) {
+                        .container *{font-size: 8px;}
+                    
+                    .encabezado_y_pie{
+                        font-size: 1rem;
+                        gap: 0.8rem;
+                        padding: 1%;}
+                    .medio{
+                        height: 25%;
+                        font-size: 0.9rem;}}
+
+     @media (max-width: 350px) {
+                            html{font-size: 6px;}
+                            .encabezado_y_pie{
+                                font-size: 1.2rem;
+                                gap: 0.5rem;
+                                padding: 1%;}
+                            .medio{font-size: 1rem;
+                            height: 20%;}}
+                            @media(max-width:300px){
+                                .container{gap: 1%;}
+                                .sector_medio, .rectangle{
+                                    height: 45%; }
+                                    .sector_medio, .rectangle{
+                                        display: flex;
+                                        flex-direction: column; }
+                                       
+                                    .sector_medio_button{
+                                        display: flex;
+                                        flex-direction: row;
+                                        width: 100%;
+                                        height: 30%;
+                                    align-self: start;}
+                                        .medio{width: 40%;
+                                        height: 50%;
+                                    font-size: 1rem;}
+                                        #cuadro_de_texto{width: 100%;
+                                            height: 70%;
+                                            margin: 0;
+                                            text-align: initial;
+                                            }
+                                            .rectangle_img{width: 100%;
+                                            height: 60%;}
+                                        .rectangle_mensaje{
+                                            width: 100%;
+                                            height: 40%;
+
+                                        }
+                                }
+                                    @media(max-width:250px){
+                                        html{font-size: 4px;}
+                                    .medio{font-size: 1.2rem;}
+                                }
+
+/*-------------------------------------------
 @media (max-width: 350px) {
        button{font-size: 0.8rem;}}
-       /*-------------------------------------------*/
+       /*-------------------------------------------
 @media (max-width: 300px) {
     html{font-size: 7px;}
 .sector_medio{
     display: flex;
     flex-direction: column;
 gap: 2%;}
+
 #cuadro_de_texto{
     width: 100%;
     height: 80%;}
-.sector_medio_button{
+.sector_medio_button,.cifrado .sector_medio_button {
     height: 20%;
     width: 100%;
 display: flex;
@@ -317,11 +391,11 @@ padding: 0%;
 gap: 0.5rem;}
 .rectangle_mensaje h1{
     font-size: 1rem;}
-    button{
+    button,.cifrado .sector_medio_button button{
         height: 50%;
         width: 40%;    }
 }
-/*-------------------------------------------*/
+/*-------------------------------------------
 @media(max-width:250px){
     .rectangle_img{display: none;}
     .rectangle_mensaje{
@@ -331,4 +405,4 @@ gap: 0.5rem;}
 align-items: center;}
         .rectangle_mensaje h1{font-size: 1.8rem;}
         .rectangle_mensaje h6{font-size: 1.5rem;}
-}
+}*/
